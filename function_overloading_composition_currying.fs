@@ -2,7 +2,7 @@
 let vat n x = x + x / 100.0 * float(n) : float
 
 // 20.3.2
-let unvat n x = float(n) * 100.0/(100.0+float(x))
+let unvat n x = float(n) * 100.0/(100.0+x)
 
 // 20.3.3
 let rec min (f:int->int):int = 
