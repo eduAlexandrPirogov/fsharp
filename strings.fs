@@ -18,3 +18,4 @@ let rec occFromIth = function
 | (s, n, c) when ((String.length s) - 1)= n && s.[n] <> c -> 0
 | (s, n, c) when s.[n] = c -> 1 + occFromIth(s, n+1, c)
 | (s, n, c) when s.[n] <> c -> 0 + occFromIth(s, n+1, c)
+
