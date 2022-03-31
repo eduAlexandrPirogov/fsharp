@@ -5,7 +5,7 @@ let vat n x = x + x / 100.0 * float(n) : float
 let unvat n x = float(n) * 100.0/(100.0+x)
 
 // 20.3.3
-let rec min (f:int->int):int = 
+let rec min f= 
     let my_n = fun n -> f n
     let start = 0
     let rec rec_check = function 
