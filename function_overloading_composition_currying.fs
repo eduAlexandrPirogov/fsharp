@@ -9,6 +9,6 @@ let rec min f=
     let my_n = fun n -> f n
     let start = 0
     let rec rec_check = function 
-        | (my_n, start) when my_n start = 0 -> my_n start
+        | (my_n, start) when my_n start = 0 -> start
         | (my_n, start) -> (rec_check (my_n, start+1))
     rec_check (my_n, start)
