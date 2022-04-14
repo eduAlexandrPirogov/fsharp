@@ -18,13 +18,3 @@ let (.>.) x y =
     | _ -> false
     let b = s ((h1,m1,f1), (h2,m2,f2))
     b
-
-let f1 = AM
-let f2 = PM
-
-let x = {hours = 11; minutes = 55; f = f1}
-let y = {hours = 11; minutes = 55; f = f2}
-
-let res = x .>. y
-
-printfn "%b" res
