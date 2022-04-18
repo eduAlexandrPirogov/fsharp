@@ -15,6 +15,6 @@ let rec dnto = fun n ->
 // 34.3
 let rec evenn = fun n ->
     let rec fill_list = function 
-       | (list, k) when  k < 0 -> list
-       | (list, k) -> fill_list (k*2::list, k-1)
+       | (list, k) when  k <= 0 -> list
+       | (list, k) -> fill_list ((k-1)*2::list, k-1)
     fill_list ([], n)
