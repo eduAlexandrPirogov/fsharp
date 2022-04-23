@@ -15,7 +15,7 @@ let rec del_even =
     fun list ->
     let rec fill_list = function
         | (list, to_fill) when list = [] -> to_fill
-        | (head::tail, to_fill) when is_even_elem head -> fill_list(tail, head::to_fill)
+        | (head::tail, to_fill) when is_even_elem head = false  -> fill_list(tail, head::to_fill)
         | (head::tail, to_fill) -> fill_list(tail, to_fill)
     List.rev(fill_list(list, []))
 
