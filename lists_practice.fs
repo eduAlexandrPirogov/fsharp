@@ -1,7 +1,7 @@
-﻿// 39.1
 let is_even_pos = fun k -> k % 2 = 0
 let is_even_elem = fun k -> k % 2 = 0
 
+﻿// 39.1
 let rec rmodd = fun list -> 
     let rec fill_list = function
     | (list, k, to_fill) when list = [] -> to_fill
