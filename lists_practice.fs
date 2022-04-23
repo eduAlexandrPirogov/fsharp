@@ -5,7 +5,7 @@ let is_even_elem = fun k -> k % 2 = 0
 let rec rmodd = fun list -> 
     let rec fill_list = function
     | (list, k, to_fill) when list = [] -> to_fill
-    | (head::tail, k, to_fill) when is_even_pos k  -> fill_list (tail, k+1, head::to_fill)  
+    | (head::tail, k, to_fill) when is_even_pos k = false  -> fill_list (tail, k+1, head::to_fill)  
     | (head::tail, k, to_fill) -> fill_list (tail, k+1, to_fill)
     List.rev(fill_list (list, 0,[]))
 
