@@ -1,6 +1,7 @@
-﻿//40.1
+//40.1
 let rec sum (p, xs) = 
     let rec sum_elem = function
+    | (p, [], k) -> 0
     | (p, head::tail, k) when tail = [] && p head -> k+head
     | (p, head::tail, k) when tail = [] -> k
     | (p, head::tail, k) when p head = true -> sum_elem(p, tail, head + k)
@@ -10,6 +11,7 @@ let rec sum (p, xs) =
 //40.2.1
 let rec count (xs, n) = 
     let rec fill_k = function
+        | ([], n, k) -> 0
         | (head::tail, n, k) when head > n-> k
         | (head::tail, n, k) when head = n -> fill_k(tail, n, k+1)
         | (head::tail, n, k) -> fill_k(tail, n, k)
