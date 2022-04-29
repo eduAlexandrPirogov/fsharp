@@ -1,6 +1,4 @@
-﻿//40.1. Напишите функцию sum(p, xs), где p -- предикат int -> bool, и xs -- список целых. 
-//Функция возвращает сумму тех элементов xs, для которых предикат истинен.
-
+﻿//40.1
 let rec sum (p, xs) = 
     let rec sum_elem = function
     | (p, head::tail, k) when tail = [] && p head -> k+head
@@ -9,10 +7,7 @@ let rec sum (p, xs) =
     | (p, head::tail, k) -> sum_elem(p, tail, k)
     sum_elem (p, xs,0)
 
-//40.2. Список [x1; x2; ...; xn] называется слабо восходящим, если его элементы удовлетворяют требованию
-
-//x1 <= x2 <= ... <= xnurs = 11; minutes = 55; f = f2}
-//40.2.1. Напишите функцию count: int list * int -> int, которая подсчитывает количество вхождений числа в список.
+//40.2.1
 let rec count (xs, n) = 
     let rec fill_k = function
         | (head::tail, n, k) when head > n-> k
