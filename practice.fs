@@ -51,14 +51,15 @@ let rec intersect (xs1, xs2) =
         | ([], xs2, res) -> []
         | (head1::tail1, xs2, res) when tail1 = [] && check_in (xs2,head1) = false -> res //Если нет во втором списк вообще
         | (head1::tail1, xs2, res) when tail1 = [] && check_in (xs2,head1) = true && check_in (res, head1) = false-> res @ head1::[] 
-        | (head1::tail1, xs2, res) when tail1 = [] && check_in (xs2,head1) = true && check_in (res, head1) = true-> res
-        | (head1::tail1, xs2, res) when check_in (xs2,head1) = true && check_in(res, head1) = true -> fill_intersect(tail1, xs2, res) // если есть во 2 сп но нет в рез
+        | (head1::tail1, xs2, res) when tail1 = [] && check_in (xs2,head1) = true && check_in (res, head1) = true-> res @ head1::[]
+        | (head1::tail1, xs2, res) when check_in (xs2,head1) = true && check_in(res, head1) = true -> fill_intersect(tail1, xs2, res @ head1::[]) // если есть во 2 сп но нет в рез
         | (head1::tail1, xs2, res) when check_in (xs2,head1) = true && check_in(res, head1) = false -> fill_intersect(tail1, xs2, res @ head1::[]) // если есть во 2 сп но нет в рез
         | (head1::tail1, xs2, res) when check_in (xs2,head1) = false -> fill_intersect(tail1, xs2, res)
     if List.length xs1 >= List.length xs2 then
         fill_intersect (xs1, xs2, [])
     else
         fill_intersect (xs2, xs1, [])
+
 
 //40.2.4
 let rec plus (xs1, xs2) = 
