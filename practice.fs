@@ -82,12 +82,11 @@ let rec plus (xs1, xs2) =
 let rec minus (xs1, xs2) = 
     let rec fill_minus = function
         | ([], xs2, res) -> res
-        | (head1::tail1, xs2, res) when tail1 = [] && check_in (xs2,head1) = true -> res
-        | (head1::tail1, xs2, res) when tail1 = [] && check_in (xs2,head1) = false-> res @ head1::[]
-        | (head1::tail1, xs2, res) when check_in (xs2,head1) = true -> fill_minus(tail1, xs2, res)
-        | (head1::tail1, xs2, res) when check_in (xs2,head1) = false -> fill_minus(tail1, xs2, res @ head1::[])
+        | (head1::tail1, head2::tail2, res) when tail1 = [] && check_in (head2::tail2,head1) = true -> res
+        | (head1::tail1, head2::tail2, res) when tail1 = [] && check_in (head2::tail2,head1) = false-> res @ head1::[]
+        | (head1::tail1, head2::tail2, res) when check_in (head2::tail2,head1) = true -> fill_minus(tail1, tail2, res)
+        | (head1::tail1, head2::tail2, res) when check_in (head2::tail2,head1) = false -> fill_minus(tail1, head2::tail2, res @ head1::[])
     fill_minus (xs1, xs2, [])
-
 
 // 40.3.1
 let rec smallest = function 
