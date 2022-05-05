@@ -8,6 +8,3 @@ let sum (p, xs) = List.fold (fun acc elem -> if p elem = true then acc+ elem els
 let revrev = function
     | ([]) -> []
     | (xs) -> List.fold (fun acc elem -> (List.fold (fun acc1 elem1 -> elem1::acc1) [] elem)::acc) [] xs
-
-revrev [[1;2];[3;4;5]] = [[5;4;3];[2;1]]
-    
