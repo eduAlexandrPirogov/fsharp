@@ -1,18 +1,3 @@
-﻿// 49.5.1
-let even_seq = Seq.initInfinite (fun i -> (i+1)*2)
-
-(*// 49.5.2
-let fac_seq = 
-    Seq.initInfinite (fun i -> 
-    let rec fact n acc = 
-        if n <= 1 then acc
-        else fact (n-1) (acc*n)
-    fact i 1)*)
-
-// 49.5.3
-(*let seq_seq = Seq.initInfinite (fun i -> if i % 2 <> 0 then  (i+1)/2 * (-1) else i/2)*)
-
-
 // 50.2.1
 let fac_seq = seq {
     let rec fact n acc = 
@@ -40,7 +25,7 @@ printfn "%b" (Seq.nth 5 even_seq = 12)
 printfn "%b" (Seq.nth 6 even_seq = 14)
 printfn "%b" (Seq.nth 7 even_seq = 16)*)
 
-
+(*
 printfn "%b" (Seq.nth 0 seq_seq = 0)
 printfn "%b" (Seq.nth 1 seq_seq = -1)
 printfn "%b" (Seq.nth 2 seq_seq = 1)
@@ -52,8 +37,7 @@ printfn "%b" (Seq.nth 7 seq_seq = -4)
 printfn "%b" (Seq.nth 8 seq_seq = 4)
 printfn "%b" (Seq.nth 9 seq_seq = -5)
 printfn "%b" (Seq.nth 10 seq_seq = 5)
-
-
+*)
 
 (*printfn "%b" (Seq.nth 0 fac_seq = 1)
 printfn "%b" (Seq.nth 1 fac_seq = 1)
