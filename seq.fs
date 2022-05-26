@@ -1,14 +1,13 @@
-﻿let even_seq = Seq.initInfinite (fun i -> i*2)
+// 49.5.1
+let even_seq = Seq.initInfinite (fun i -> i*2)
 
-
-
+// 49.5.2
 let fac_seq = 
     Seq.initInfinite (fun i -> 
     let rec fact n acc = 
         if n <= 1 then acc
         else fact (n-1) (acc*n)
     fact i 1)
-
 
 // 49.5.3
 let seq_seq = Seq.initInfinite (fun i -> if i % 2 <> 0 then  (i+1)/2 * (-1) else i/2)
